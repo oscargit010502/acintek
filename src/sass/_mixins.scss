@@ -1,0 +1,9 @@
+// Mixins para responsive y otros
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) { @content; }
+  }
+  @else if $breakpoint == mobile {
+    @media (max-width: 600px) { @content; }
+  }
+}
