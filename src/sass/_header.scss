@@ -1,0 +1,150 @@
+.header {
+  width: 100%;
+  padding: 2rem 0 0.5rem 0;
+  background: $color-white;
+  .header-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    .logo {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      img, svg {
+        max-width: 200px;
+        max-height: 100px;
+        height: auto;
+        width: auto;
+        display: block;
+      }
+    }
+    .navbar {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      font-size: $font-size-menu;
+      min-width: 0;
+      padding-top: 1.0625rem;
+      padding-bottom: 1.0625rem;
+      .navbar-links {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        a {
+          color: $color-primary;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1.15rem;
+          position: relative;
+          padding: 0.5rem 0;
+          transition: color 0.2s;
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: $color-primary;
+            border-radius: 2px;
+            transform: scaleX(0);
+            transition: transform 30ms ease-in-out;
+            transform-origin: left;
+          }
+          &:hover {
+            color: $color-secondary;
+            &::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+      .menu-toggle {
+        display: none;
+        cursor: pointer;
+        img, svg {
+          width: 36px;
+          height: 36px;
+        }
+        @include respond-to(mobile) {
+          display: block;
+        }
+      }
+    }
+    .btn-contact {
+      flex: 0 0 auto;
+      background: linear-gradient(90deg, $color-secondary 0%, $color-primary 100%);
+      color: $color-white;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.8rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(35,42,77,0.08);
+      transition: background 0.2s;
+      cursor: pointer;
+      white-space: nowrap;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover {
+        background: linear-gradient(90deg, $color-primary 0%, $color-secondary 100%);
+      }
+    }
+  }
+  @include respond-to(tablet) {
+    .header-container {
+      gap: 1rem;
+      padding: 0 1rem;
+      .navbar {
+        gap: 1rem;
+        .navbar-links {
+          gap: 1rem;
+        }
+      }
+      .btn-contact {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+      }
+    }
+  }
+  @include respond-to(mobile) {
+    .header-container {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0 0.5rem;
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        .navbar-links {
+          flex-direction: column;
+          gap: 1rem;
+          width: 100%;
+          a {
+            width: 100%;
+            text-align: left;
+          }
+        }
+      }
+      .btn-contact {
+        width: 100%;
+        padding: 0.8rem 0;
+        font-size: 1rem;
+        max-width: 100%;
+      }
+    }
+  }
+}
+   

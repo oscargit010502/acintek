@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'mixins';
+
+.main {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .coming-soon {
+    font-size: $font-size-title;
+    font-weight: bold;
+    color: $color-primary;
+    text-align: center;
+  }
+}
